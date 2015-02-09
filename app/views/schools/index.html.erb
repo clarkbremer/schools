@@ -18,7 +18,7 @@
       <% @schools.each do |school| %>
       <tr>
         <td> <%= link_to(school.name, school) %> </td>
-        <td> <%= school.distance_to(@masp).round(1).to_s %> </td>
+        <td> <%= school.distance_to(@masp) > 5000 ? 999 : school.distance_to(@masp).round(1) %> </td>
         <td> <%= school.num_seniors.to_s %> </td>
         <td> <%= school.rate_percent("four year", "All Students", "Graduate") %> </td>
         <td> <%= school.rate_num("four year", "All Students", "Graduate") %> </td>
