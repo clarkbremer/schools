@@ -1,0 +1,30 @@
+<div class="container" >
+  <H1>
+    <%= @school.name %>
+  </H1>
+  <p>
+  <table class="dtable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Group</th>
+        <th>Desc</th>
+        <th>Status</th>
+        <th>Count</th>
+        <th>Percent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @school.rates.each do |rate| %>
+        <tr>
+          <td> <%= rate.name %> </td>
+          <td> <%= rate.group %> </td>
+          <td> <%= rate.desc %> </td>
+          <td> <%= rate.status %> </td>
+          <td> <%= rate.num %> </td>
+          <td> <%= rate.percent %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

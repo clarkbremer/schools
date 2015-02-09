@@ -1,0 +1,33 @@
+<div class="container">
+    <H1>Minnesota Public High Schools</H1>
+    <table class="dtable">
+      <thead>
+      <tr>
+        <th>School</th>
+        <th>Distance</th>
+        <th>Num Seniors</th>
+        <th>4-yr Grad Rate</th>
+        <th>4-yr Count</th>
+        <th>5-yr Grad Rate</th>
+        <th>5-yr Count</th>
+        <th>6-yr Grad Rate</th>
+        <th>6-yr Count</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @schools.each do |school| %>
+      <tr>
+        <td> <%= link_to(school.name, school) %> </td>
+        <td> <%= school.distance_to(@masp).round(1).to_s %> </td>
+        <td> <%= school.num_seniors.to_s %> </td>
+        <td> <%= school.rate_percent("four year", "All Students", "Graduate") %> </td>
+        <td> <%= school.rate_num("four year", "All Students", "Graduate") %> </td>
+        <td> <%= school.rate_percent("five year", "All Students", "Graduate") %> </td>
+        <td> <%= school.rate_num("five year", "All Students", "Graduate") %> </td>
+        <td> <%= school.rate_percent("six year", "All Students", "Graduate") %> </td>
+        <td> <%= school.rate_num("six year", "All Students", "Graduate") %> </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
