@@ -8,11 +8,11 @@ class School < ActiveRecord::Base
   end
 
   def rate_num(name, group, status)
-    rates.where(name: name, group: group, status: status).first.num
+    rates.select { |r| r.name == name && r.group == group && r.status == status }.first.num
   end
 
   def rate_percent(name, group, status)
-    rates.where(name: name, group: group, status: status).first.percent
+    rates.select { |r| r.name == name && r.group == group && r.status == status }.first.percent
   end
 
   def distance_to(other)
