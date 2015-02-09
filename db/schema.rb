@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150208003657) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "rates", force: :cascade do |t|
     t.integer "school_id"
     t.string  "code"

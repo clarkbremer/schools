@@ -19,10 +19,10 @@ task :read_data => :environment do
     end
   end
 
-  #School.destroy_all
+  School.destroy_all
   rows = CSV.read(Rails.root.join("data", "2013 Graduation Indicators.csv"))
   rows.each do |cols|
-    # break if School.count > 10
+  #  break if School.count > 10
     district_number = cols[3]
     district_type = cols[4]
     school_number = cols[6]
@@ -73,28 +73,28 @@ task :read_data => :environment do
     school.save!
   end
 
-  # file=File.open(Rails.root.join("data", "GettingPrepared2014Appendices.csv"), "r:ISO-8859-1")
-  # rows = CSV.parse(file)
-  # puts "#{rows.count} rows in remediation csv"
-  # rows.each do |cols|
-  #   code = cols[2]
-  #   year = cols[3]
-  #   percent = cols[10].to_f
-  #   num = cols[8].to_i
-  #   if year == "2012"
-  #     school = School.where(code: code).first
-  #     if school
-  #       school.rates.create(
-  #         name: "remediation_rate",
-  #         num: num,
-  #         percent: percent,
-  #         group: "All Students",
-  #         status: "remediation",
-  #         code: code
-  #       )
-  #       puts "Added remediation_rate of #{percent} to #{school.name}"
-  #     end
-  #   end
-  # end
+  file=File.open(Rails.root.join("data", "GettingPrepared2014Appendices.csv"), "r:ISO-8859-1")
+  rows = CSV.parse(file)
+  puts "#{rows.count} rows in remediation csv"
+  rows.each do |cols|
+    code = cols[2]
+    year = cols[3]
+    percent = cols[10].to_f
+    num = cols[8].to_i
+    if year == "2012"
+      school = School.where(code: code).first
+      if school
+        school.rates.create(
+          name: "remediation_rate",
+          num: num,
+          percent: percent,
+          group: "All Students",
+          status: "remediation",
+          code: code
+        )
+        puts "Added remediation_rate of #{percent} to #{school.name}"
+      end
+    end
+  end
 
 end

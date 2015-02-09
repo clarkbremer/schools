@@ -4,7 +4,7 @@ class SchoolsController < ApplicationController
     puts "@@@@ index:"
     @masp = Geokit::Geocoders::GoogleGeocoder.geocode '2500 Central Ave NE, Minneapolis, MN'
     # @schools = School.includes(:rates).where(rates: {group: "All Students"}).all
-    @schools = School.first(50)
+    @schools = School.all
     @schools = @schools.sort_by {|s| s.distance_to(@masp)}
   end
 
