@@ -1,5 +1,12 @@
 <div class="container">
     <H1>Minnesota Public High Schools</H1>
+    <%= form_tag '', :method => :get do %>
+      <%= label_tag :min_size, "Min Num Seniors:" %>
+      <%= text_field_tag :min_size, @min_size %>
+      <%= label_tag :max_size, "   Max Num Seniors:" %>
+      <%= text_field_tag :max_size, @max_size == 0 ? "" : @max_size %>
+      <%= submit_tag 'Filter on size' %>
+    <% end %>
     <table class="dtable stripe">
       <thead>
       <tr>

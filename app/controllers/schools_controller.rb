@@ -1,11 +1,14 @@
 
 class SchoolsController < ApplicationController
   def index
-    puts "@@@@ index:"
     @masp = Geokit::Geocoders::GoogleGeocoder.geocode '2500 Central Ave NE, Minneapolis, MN'
     @schools = School.includes(:rates).where(rates: {group: "All Students"})
-    #@schools = School.all
-    @schools = @schools.sort_by {|s| s.distance_to(@masp)}
+    if params[:commit] == "Filter on size"
+      @min_size = params[:min_size].to_i
+      @max_size =  params[:max_size].to_i
+      @schools = @schools.reject {|s| s.num_seniors > @max_size } if @max_size != 0
+      @schools = @schools.reject {|s| s.num_seniors < @min_size } if @min_size
+    end
   end
 
   def show
