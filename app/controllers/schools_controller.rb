@@ -1,6 +1,7 @@
 
 class SchoolsController < ApplicationController
   def index
+    @title = "Minnesota Public High Schools"
     @masp = Geokit::Geocoders::GoogleGeocoder.geocode '2500 Central Ave NE, Minneapolis, MN'
     @schools = School.includes(:rates).where(rates: {group: "All Students"})
     if params[:commit] == "Filter on size"
@@ -13,6 +14,7 @@ class SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
+    @title = "Details for #{@school.name}"
   end
 
 end
