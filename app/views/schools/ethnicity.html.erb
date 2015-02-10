@@ -1,0 +1,122 @@
+<div class="container" >
+  <%= render partial: "school_header" %>
+  <table class="stripe table">
+    <thead>
+      <tr>
+        <%= render "year_456_header" %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan=5 >Graduated</td>
+        <td>Black, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Black, not of Hispanic origin", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>Hispanic</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Hispanic", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>Asian/Pacific Islander</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Asian/Pacific Islander", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>White, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "White, not of Hispanic origin", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Graduate"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=5 >Continuing</td>
+        <td>Black, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Black, not of Hispanic origin", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>Hispanic</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Hispanic", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>Asian/Pacific Islander</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Asian/Pacific Islander", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>White, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "White, not of Hispanic origin", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Continuing"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=5 >Dropout</td>
+        <td>Black, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Black, not of Hispanic origin", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>Hispanic</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Hispanic", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>Asian/Pacific Islander</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Asian/Pacific Islander", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>White, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "White, not of Hispanic origin", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Dropout"} %>
+      <tr>
+
+      </tr>
+        <td rowspan=5 >Unknown</td>
+        <td>Black, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Black, not of Hispanic origin", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>Hispanic</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Hispanic", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>Asian/Pacific Islander</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "Asian/Pacific Islander", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>White, not of Hispanic origin</td>
+        <%= render partial: "year_456", locals: { group: "Ethnicity", description: "White, not of Hispanic origin", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Unknown"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=5 >TOTAL</td>
+        <td>Black, not of Hispanic origin</td>
+        <%= render partial: "year_456_total", locals: { group: "Ethnicity", description: "Black, not of Hispanic origin"} %>
+      </tr>
+      <tr>
+        <td>Hispanic</td>
+        <%= render partial: "year_456_total", locals: { group: "Ethnicity", description: "Hispanic"} %>
+      </tr>
+      <tr>
+        <td>Asian/Pacific Islander</td>
+        <%= render partial: "year_456_total", locals: { group: "Ethnicity", description: "Asian/Pacific Islander"} %>
+      </tr>
+      <tr>
+        <td>White, not of Hispanic origin</td>
+        <%= render partial: "year_456_total", locals: { group: "Ethnicity", description: "White, not of Hispanic origin"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456_all" %>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

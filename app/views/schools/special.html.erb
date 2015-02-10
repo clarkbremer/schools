@@ -1,0 +1,104 @@
+<div class="container" >
+  <%= render partial: "school_header" %>
+  <table class="stripe table">
+    <thead>
+      <tr>
+        <%= render "year_456_header" %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan=4 >Graduated</td>
+        <td>Limited English Proficiency</td>
+        <%= render partial: "year_456", locals: { group: "LEP Students", description: "Limited English Proficient", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>Free/Reduced Lunch</td>
+        <%= render partial: "year_456", locals: { group: "FRP Students", description: "Free/Reduced Priced Lunch", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>Special Ed</td>
+        <%= render partial: "year_456", locals: { group: "Special Ed Students", description: "Special Education", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Graduate"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=4 >Continuing</td>
+        <td>Limited English Proficiency</td>
+        <%= render partial: "year_456", locals: { group: "LEP Students", description: "Limited English Proficient", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>Free/Reduced Lunch</td>
+        <%= render partial: "year_456", locals: { group: "FRP Students", description: "Free/Reduced Priced Lunch", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>Special Ed</td>
+        <%= render partial: "year_456", locals: { group: "Special Ed Students", description: "Special Education", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Continuing"} %>
+      </tr>
+
+
+      <tr>
+        <td rowspan=4 >Dropout</td>
+         <td>Limited English Proficiency</td>
+        <%= render partial: "year_456", locals: { group: "LEP Students", description: "Limited English Proficient", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>Free/Reduced Lunch</td>
+        <%= render partial: "year_456", locals: { group: "FRP Students", description: "Free/Reduced Priced Lunch", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>Special Ed</td>
+        <%= render partial: "year_456", locals: { group: "Special Ed Students", description: "Special Education", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Dropout"} %>
+      </tr>
+
+
+      <tr>
+        <td rowspan=4 >Unknown</td>
+        <td>Limited English Proficiency</td>
+        <%= render partial: "year_456", locals: { group: "LEP Students", description: "Limited English Proficient", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>Free/Reduced Lunch</td>
+        <%= render partial: "year_456", locals: { group: "FRP Students", description: "Free/Reduced Priced Lunch", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>Special Ed</td>
+        <%= render partial: "year_456", locals: { group: "Special Ed Students", description: "Special Education", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Unknown"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=4 >TOTAL</td>
+        <td>Limited English Proficiency</td>
+        <%= render partial: "year_456_total", locals: { group: "LEP Students", description: "Limited English Proficient"} %>
+      </tr>
+      <tr>
+        <td>Free/Reduced Lunch</td>
+        <%= render partial: "year_456_total", locals: { group: "FRP Students", description: "Free/Reduced Priced Lunch"} %>
+      </tr>
+      <tr>
+        <td>Special Ed</td>
+        <%= render partial: "year_456_total", locals: { group: "Special Ed Students", description: "Special Education"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456_all" %>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

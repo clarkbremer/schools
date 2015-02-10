@@ -1,0 +1,82 @@
+<div class="container" >
+  <%= render partial: "school_header" %>
+  <table class="stripe table">
+    <thead>
+      <tr>
+        <%= render "year_456_header" %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan=3 >Graduated</td>
+        <td>Male</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Male", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>Female</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Female", status: "Graduate"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Graduate"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=3 >Continuing</td>
+        <td>Male</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Male", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>Female</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Female", status: "Continuing"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Continuing"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=3 >Dropout</td>
+        <td>Male</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Male", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>Female</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Female", status: "Dropout"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Dropout"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=3 >Unknown</td>
+        <td>Male</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Male", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>Female</td>
+        <%= render partial: "year_456", locals: { group: "Gender", description: "Female", status: "Unknown"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Unknown"} %>
+      </tr>
+
+      <tr>
+        <td rowspan=3 >TOTAL</td>
+        <td>Male</td>
+        <%= render partial: "year_456_total", locals: { group: "Gender", description: "Male"} %>
+      </tr>
+      <tr>
+        <td>Female</td>
+        <%= render partial: "year_456_total", locals: { group: "Gender", description: "Female"} %>
+      </tr>
+      <tr>
+        <td>All</td>
+        <%= render partial: "year_456_all" %>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

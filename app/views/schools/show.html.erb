@@ -1,27 +1,72 @@
 <div class="container" >
   <%= render "school_header" %>
-  <table class="dtable stripe">
+  <table class="stripe table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Group</th>
-        <th>Description</th>
         <th>Status</th>
-        <th>Count</th>
-        <th>Percent</th>
+        <th>Group</th>
+        <th>4-Year %</th>
+        <th>4-Year #</th>
+        <th>5-year %</th>
+        <th>5-year #</th>
+        <th>6-year %</th>
+        <th>6-year #</th>
       </tr>
     </thead>
     <tbody>
-      <% @school.rates.each do |rate| %>
-        <tr>
-          <td> <%= rate.name %> </td>
-          <td> <%= rate.group %> </td>
-          <td> <%= rate.description %> </td>
-          <td> <%= rate.status %> </td>
-          <td> <%= rate.num %> </td>
-          <td> <%= rate.percent %> </td>
-        </tr>
-      <% end %>
+      <tr>
+        <td>Graduated</td>
+        <td>All Students</td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Graduate") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Graduate") %> </td>
+        <td><%= @school.rate_percent("five year", "All Students", "All Students" ,"Graduate") %> </td>
+        <td><%= @school.rate_num("five year", "All Students", "All Students" ,"Graduate") %> </td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Graduate") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Graduate") %> </td>
+      </tr>
+      <tr>
+        <td>Continuing</td>
+        <td>All Students</td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Continuing") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Continuing") %> </td>
+        <td><%= @school.rate_percent("five year", "All Students", "All Students" ,"Continuing") %> </td>
+        <td><%= @school.rate_num("five year", "All Students", "All Students" ,"Continuing") %> </td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Continuing") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Continuing") %> </td>
+      </tr>
+      <tr>
+        <td>Dropout</td>
+        <td>All Students</td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Dropout") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Dropout") %> </td>
+        <td><%= @school.rate_percent("five year", "All Students", "All Students" ,"Dropout") %> </td>
+        <td><%= @school.rate_num("five year", "All Students", "All Students" ,"Dropout") %> </td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Dropout") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Dropout") %> </td>
+      </tr>
+      <tr>
+        <td>Unknown</td>
+        <td>All Students</td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Unknown") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Unknown") %> </td>
+        <td><%= @school.rate_percent("five year", "All Students", "All Students" ,"Unknown") %> </td>
+        <td><%= @school.rate_num("five year", "All Students", "All Students" ,"Unknown") %> </td>
+        <td><%= @school.rate_percent("four year", "All Students", "All Students" ,"Unknown") %> </td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"Unknown") %> </td>
+      </tr>
+      <tr>
+        <td>TOTAL</td>
+        <td>All Students</td>
+        <td>100</td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"TOTAL") %> </td>
+        <td>100</td>
+        <td><%= @school.rate_num("five year", "All Students", "All Students" ,"TOTAL") %> </td>
+        <td>100</td>
+        <td><%= @school.rate_num("four year", "All Students", "All Students" ,"TOTAL") %> </td>
+      </tr>
     </tbody>
   </table>
+  <%= link_to("Gender Details", school_gender_path(@school), class: "btn btn-default") %>
+  <%= link_to("Ethnicity Details", school_ethnicity_path(@school), class: "btn btn-default") %>
+  <%= link_to("Special Needs Details", school_special_path(@school), class: "btn btn-default") %>
 </div>
