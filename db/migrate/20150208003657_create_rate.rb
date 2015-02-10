@@ -3,12 +3,13 @@ class CreateRate < ActiveRecord::Migration
     create_table :rates do |t|
       t.belongs_to :school
       t.string :code
-      t.string :name
-      t.string :group
-      t.string :status
-      t.string :desc
-      t.float :percent
-      t.integer :num
+      # note:  I did not test these defaults
+      t.string :name, default: ''
+      t.string :group, default: ''
+      t.string :status, default: ''
+      t.string :description, default: ''
+      t.float :percent, default: 0.0
+      t.integer :num, default: 0
     end
   end
 end

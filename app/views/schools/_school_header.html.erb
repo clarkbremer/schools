@@ -1,0 +1,10 @@
+<H1>
+  School Detail for <%= @school.name %>
+</H1>
+<p>
+<div>
+  Address: <%= @school.address %>
+  <p>
+  Remediation Rate: <%= @school.rate_percent("remediation_rate", "All Students", "", "remediation") %>
+  <p>
+</div>

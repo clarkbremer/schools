@@ -1,14 +1,11 @@
 <div class="container" >
-  <H1>
-    School Detail for <%= @school.name %>
-  </H1>
-  <p>
+  <%= render "school_header" %>
   <table class="dtable stripe">
     <thead>
       <tr>
         <th>Name</th>
         <th>Group</th>
-        <th>Desc</th>
+        <th>Description</th>
         <th>Status</th>
         <th>Count</th>
         <th>Percent</th>
@@ -19,7 +16,7 @@
         <tr>
           <td> <%= rate.name %> </td>
           <td> <%= rate.group %> </td>
-          <td> <%= rate.desc %> </td>
+          <td> <%= rate.description %> </td>
           <td> <%= rate.status %> </td>
           <td> <%= rate.num %> </td>
           <td> <%= rate.percent %> </td>

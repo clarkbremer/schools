@@ -4,15 +4,17 @@ class School < ActiveRecord::Base
   has_many :rates, dependent: :destroy
 
   def num_seniors
-    rate_num("four year", "All Students", "TOTAL")
+    rate_num("four year", "All Students", "All Students", "TOTAL")
   end
 
-  def rate_num(name, group, status)
-    rates.select { |r| r.name == name && r.group == group && r.status == status }.first.num
+  def rate_num(name, group, description, status)
+    rate = rates.select { |r| r.name == name && r.group == group && r.description.include?(description) && r.status == status }
+    rate ? rate.first.num : ""
   end
 
-  def rate_percent(name, group, status)
-    rates.select { |r| r.name == name && r.group == group && r.status == status }.first.percent
+  def rate_percent(name, group, description, status)
+    rate = rates.select { |r| r.name == name && r.group == group && r.description.include?(description) && r.status == status }
+    rate ? rate.first.percent : ""
   end
 
   def distance_to(other)
