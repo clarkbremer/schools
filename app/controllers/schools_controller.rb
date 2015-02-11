@@ -2,7 +2,8 @@
 class SchoolsController < ApplicationController
   def index
     @title = "Minnesota Public High Schools"
-    @masp = Geokit::Geocoders::GoogleGeocoder.geocode '2500 Central Ave NE, Minneapolis, MN'
+    #@masp = Geokit::Geocoders::GoogleGeocoder.geocode '2500 Central Ave NE, Minneapolis, MN'
+    @masp = Geokit::GeoLoc.new(lat: 45.013301, lng: -93.24787)
     @schools = School.includes(:rates).where(rates: {group: "All Students"})
     if params[:commit] == "Filter on size"
       @min_size = params[:min_size].to_i
