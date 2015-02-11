@@ -9,12 +9,12 @@ class School < ActiveRecord::Base
 
   def rate_num(name, group, description, status)
     rate = rates.select { |r| r.name == name && r.group == group && r.description.start_with?(description) && r.status == status }
-    rate ? rate.first.num : ""
+    rate.empty? ? "" : rate.first.num
   end
 
   def rate_percent(name, group, description, status)
     rate = rates.select { |r| r.name == name && r.group == group && r.description.start_with?(description) && r.status == status }
-    rate ? rate.first.percent : ""
+    rate.empty? ? "" : rate.first.percent
   end
 
   def group_percent(name, group, description)

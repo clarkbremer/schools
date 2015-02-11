@@ -14,22 +14,22 @@ class SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
-    @title = "School Details for #{@school.name}"
+    @title = "Graduation Status for All Students"
   end
 
   def gender
     @school = School.find(params[:school_id])
-    @title = "Gender Detail for #{@school.name}"
+    @title = "Gender Details"
   end
 
   def ethnicity
     @school = School.find(params[:school_id])
-    @title = "Ethnicity Detail for #{@school.name}"
+    @title = "Ethnicity Details"
   end
 
   def special
     @school = School.find(params[:school_id])
-    @title = "Special Needs Detail for #{@school.name}"
+    @title = "Special Needs Details"
   end
 
 end

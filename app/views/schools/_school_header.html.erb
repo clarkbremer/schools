@@ -1,12 +1,22 @@
-<H1>
-  <%= @title %>
-</H1>
-<p>
-<div>
-  <H3>
-  <%= @school.address %>
-  </H3>
-  <p>
-  Remediation Rate: <%= @school.rate_percent("remediation_rate", "All Students", "", "remediation") %>
-  <p>
+<div class="container" padding="50">
+  <div class="row-fluid">
+    <div class="col-md-8">
+      <H1>
+        <%= @school.name %><p>
+        <%= @title %><p>
+      </H1>
+      <H5>
+        Remediation Rate: <%= @school.rate_percent("remediation_rate", "All Students", "", "remediation") %>
+      </H5>
+    </div>
+    <div class="col-md-4">
+      <iframe
+      width="300"
+      height="225"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&q=<%= @school.address %>&zoom=14">
+      </iframe>
+    </div>
+    <p><p>
+  </div>
 </div>
