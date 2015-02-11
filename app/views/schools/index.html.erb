@@ -1,5 +1,7 @@
 <div class="container">
-    <H1>Minnesota Public High Schools</H1>
+    <H1><%= @title %></H1>
+    <H4>Data Source <%= link_to("Minnesota Department of Education", "http://education.state.mn.us/MDE/Welcome/News/PressRel/054282") %></H4>
+    <p>
     <%= form_tag '', :method => :get do %>
       <%= label_tag :min_size, "Min Num Seniors:" %>
       <%= text_field_tag :min_size, @min_size %>
@@ -7,6 +9,7 @@
       <%= text_field_tag :max_size, @max_size == 0 ? "" : @max_size %>
       <%= submit_tag 'Filter on size' %>
     <% end %>
+    <p>
     <table class="dtable stripe">
       <thead>
       <tr>
