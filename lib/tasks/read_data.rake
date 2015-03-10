@@ -36,7 +36,7 @@ namespace :read_data do
         num: cols[12].to_i,
         percent: cols[13].to_f,
         group: cols[8],
-        desc: cols[10],
+        description: cols[10],
         status: cols[11],
         code: code
       )
@@ -45,7 +45,7 @@ namespace :read_data do
         num: cols[14].to_i,
         percent: cols[15].to_f,
         group: cols[8],
-        desc: cols[10],
+        description: cols[10],
         status: cols[11],
         code: code
       )
@@ -54,7 +54,7 @@ namespace :read_data do
         num: cols[16].to_i,
         percent: cols[17].to_f,
         group: cols[8],
-        desc: cols[10],
+        description: cols[10],
         status: cols[11],
         code: code
       )
@@ -91,7 +91,7 @@ namespace :read_data do
             percent: percent,
             group: "All Students",
             status: "remediation",
-            desc:"Remediation Rate"
+            description:"Remediation Rate",
             code: code
           )
           puts "Added remediation_rate of #{percent} to #{school.name}"

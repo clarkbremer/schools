@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20150208003657) do
   create_table "rates", force: :cascade do |t|
     t.integer "school_id"
     t.string  "code"
-    t.string  "name"
-    t.string  "group"
-    t.string  "status"
-    t.string  "desc"
-    t.float   "percent"
-    t.integer "num"
+    t.string  "name",        default: ""
+    t.string  "group",       default: ""
+    t.string  "status",      default: ""
+    t.string  "description", default: ""
+    t.float   "percent",     default: 0.0
+    t.integer "num",         default: 0
   end
 
   create_table "schools", force: :cascade do |t|

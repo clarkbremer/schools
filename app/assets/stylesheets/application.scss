@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require nvd3-rails
  */
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";

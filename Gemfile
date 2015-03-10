@@ -24,6 +24,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+#d3 gems for building graphs
+gem 'd3-rails', '~> 3.5.2'
+gem "nvd3-rails", :git => "git@github.com:adeven/nvd3-rails.git", :submodules => true
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

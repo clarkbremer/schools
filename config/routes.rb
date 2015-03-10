@@ -5,5 +5,9 @@ Rails.application.routes.draw do
     get 'special'
   end
 
+  resources :data do
+  	get 'get_data'
+  end
+
   root 'schools#index'
 end
