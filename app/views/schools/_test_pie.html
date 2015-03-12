@@ -2,10 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="../../assets/stylesheets/nv.d3.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
-    <script src="../../javascripts/nv.d3.js"></script>
-    <script src="lib/stream_layers.js"></script>
 
     <style>
         text {
@@ -31,24 +27,20 @@
 <svg id="test2" class="mypiechart"></svg>
 
 <script>
-    var testdata = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var testdata2 = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
+    
+    var text = '{ "data":[' +
+    '{"key":"One", "y":5 },' +
+    '{"key":"Two", "y":2 },' +
+    '{"key":"Three", "y":9 },' +
+    '{"key":"Four", "y":7 },' +
+    '{"key":"Five", "y":4 },' +
+    '{"key":"Six", "y":3 },' +
+    '{"key":"Seven", "y":0.5 }]}';
+
+    var testdata = JSON.parse(text);
+
+    var testdata2 = JSON.parse(text);
+
     var height = 350;
     var width = 350;
     nv.addGraph(function() {
@@ -58,15 +50,15 @@
             .width(width)
             .height(height);
         d3.select("#test1")
-            .datum(testdata2)
+            .datum(testdata2.data)
             .transition().duration(1200)
             .attr('width', width)
             .attr('height', height)
             .call(chart);
         // update chart data values randomly
         setInterval(function() {
-            testdata2[0].y = Math.floor(Math.random() * 10);
-            testdata2[1].y = Math.floor(Math.random() * 10);
+            testdata.data[0].y = Math.floor(Math.random() * 10);
+            testdata2.data[1].y = Math.floor(Math.random() * 10);
             chart.update();
         }, 4000);
         return chart;
@@ -93,7 +85,7 @@
         // MAKES LABELS OUTSIDE OF DONUT
         //chart.pie.donutLabelsOutside(true).donut(true);
         d3.select("#test2")
-            .datum(testdata)
+            .datum(testdata.data)
             .transition().duration(1200)
             .attr('width', width)
             .attr('height', height)
