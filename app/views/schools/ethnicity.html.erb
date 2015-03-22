@@ -1,5 +1,6 @@
 <div class="container" >
   <%= render partial: "school_header" %>
+  <%= render partial: "ethnicity_pie" %>
   <table class="stripe table">
     <thead>
       <tr>
@@ -28,7 +29,6 @@
         <td>All Students</td>
         <%= render partial: "year_456", locals: { group: "All Students", description: "All Students", status: "Graduate"} %>
       </tr>
-
       <tr>
         <td rowspan=5 >Continuing</td>
         <td>Black, not of Hispanic origin</td>
@@ -119,4 +119,15 @@
 
     </tbody>
   </table>
+
 </div>
+
+<script>
+   var piedata = [
+    {"key":"Black", "y":<%= @school.ethnicity_percent("Black, not of Hispanic origin") %> },
+    {"key":"Hispanic", "y":<%= @school.ethnicity_percent("Hispanic") %> },
+    {"key":"Asian", "y":<%= @school.ethnicity_percent("Asian/Pacific Islander") %> },
+    {"key":"White", "y":<%= @school.ethnicity_percent("White, not of Hispanic origin") %> }
+  ];
+</script>
+

@@ -18,3 +18,4 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require_tree .
+//= require nvd3-rails
