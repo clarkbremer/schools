@@ -25,4 +25,8 @@ class School < ActiveRecord::Base
     loc = Geokit::GeoLoc.new(lat: lat, lng: long)
     loc.distance_to(other)
   end
+
+  def ethnicity_percent(desc)
+    group_percent("four year", "Ethnicity", desc)
+  end
 end
