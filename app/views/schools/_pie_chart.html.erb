@@ -10,8 +10,8 @@
         svg {
             display: block;
             float: left;
-            height: 350px;
-            width: 350px;
+            height: 300px;
+            width: 300px;
         }
         html, body {
             margin: 0px;
@@ -23,25 +23,30 @@
 </head>
 <body class='with-3d-shadow with-transitions'>
 
-<svg id="pie1" class="mypiechart"></svg>
+<div class="col-md-3">
+<svg id="<%= name %>_pie"></svg>
+<div class="chart-title text-center"><h3><%= name.camelize %></h3></div>
+</div>
 
 <script>
-    var height = 350;
-    var width = 350;
+    var height = 300;
+    var width = 300;
     nv.addGraph(function() {
-        var chart = nv.models.pieChart()
+        var <%= name %>_chart = nv.models.pieChart()
             .x(function(d) { return d.key })
             .y(function(d) { return d.y })
             .width(width)
-            .height(height);
-        d3.select("#pie1")
-            .datum(piedata)
-            .transition().duration(1200)
+            .height(height)
+            .showLabels(true)
+            .labelType("percent");
+        d3.select("#<%= name %>_pie")
+            .datum(<%= name %>_piedata)
             .attr('width', width)
             .attr('height', height)
-            .call(chart);
-        return chart;
+            .call(<%= name %>_chart);
+        return <%= name %>_chart;
     });
+
 </script>
 </body>
 </html>

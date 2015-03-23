@@ -1,5 +1,15 @@
+<script>
+  var gender_piedata = [
+    {"key":"Female", "y":<%= @school.gender_percent("Female") %> },
+    {"key":"Male", "y":<%= @school.gender_percent("Male") %> }
+  ];
+</script>
+
 <div class="container" >
   <%= render partial: "school_header" %>
+  <div class="row">
+    <%= render partial: "pie_chart", locals: {name: "gender"} %>
+  </div>
   <table class="stripe table">
     <thead>
       <tr>
@@ -79,5 +89,4 @@
 
     </tbody>
   </table>
-  <%= render partial: "test_pie" %>
  </div>

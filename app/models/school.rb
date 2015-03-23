@@ -29,4 +29,8 @@ class School < ActiveRecord::Base
   def ethnicity_percent(desc)
     group_percent("four year", "Ethnicity", desc)
   end
+
+  def gender_percent(desc)
+    group_percent("four year", "Gender", desc)
+  end
 end

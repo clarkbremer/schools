@@ -1,6 +1,19 @@
+<script>
+   var ethnicity_piedata = [
+    {"key":"Black", "y":<%= @school.ethnicity_percent("Black, not of Hispanic origin") %> },
+    {"key":"Hispanic", "y":<%= @school.ethnicity_percent("Hispanic") %> },
+    {"key":"Asian", "y":<%= @school.ethnicity_percent("Asian/Pacific Islander") %> },
+    {"key":"White", "y":<%= @school.ethnicity_percent("White, not of Hispanic origin") %> }
+  ];
+
+</script>
+
 <div class="container" >
   <%= render partial: "school_header" %>
-  <%= render partial: "ethnicity_pie" %>
+  <p>
+  <div class="row">
+    <%= render partial: "pie_chart", locals: {name: "ethnicity"} %>
+  </div>
   <table class="stripe table">
     <thead>
       <tr>
@@ -122,12 +135,5 @@
 
 </div>
 
-<script>
-   var piedata = [
-    {"key":"Black", "y":<%= @school.ethnicity_percent("Black, not of Hispanic origin") %> },
-    {"key":"Hispanic", "y":<%= @school.ethnicity_percent("Hispanic") %> },
-    {"key":"Asian", "y":<%= @school.ethnicity_percent("Asian/Pacific Islander") %> },
-    {"key":"White", "y":<%= @school.ethnicity_percent("White, not of Hispanic origin") %> }
-  ];
-</script>
+
 

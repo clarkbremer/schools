@@ -1,5 +1,30 @@
+<script>
+   var ethnicity_piedata = [
+    {"key":"Black", "y":<%= @school.ethnicity_percent("Black, not of Hispanic origin") %> },
+    {"key":"Hispanic", "y":<%= @school.ethnicity_percent("Hispanic") %> },
+    {"key":"Asian", "y":<%= @school.ethnicity_percent("Asian/Pacific Islander") %> },
+    {"key":"White", "y":<%= @school.ethnicity_percent("White, not of Hispanic origin") %> }
+  ];
+  var gender_piedata = [
+    {"key":"Female", "y":<%= @school.gender_percent("Female") %> },
+    {"key":"Male", "y":<%= @school.gender_percent("Male") %> }
+  ];
+  var four_yr_status_piedata = [
+    {"key":"Graduated", "y":<%= @school.rate_percent("four year", "All Students", "All Students" ,"Graduate") %> },
+    {"key":"Continuing", "y":<%= @school.rate_percent("four year", "All Students", "All Students" ,"Continuing") %> },
+    {"key":"Dropout", "y":<%= @school.rate_percent("four year", "All Students", "All Students" ,"Dropout") %> },
+    {"key":"Unknown", "y":<%= @school.rate_percent("four year", "All Students", "All Students" ,"Unknown") %> }
+  ];
+</script>
+
+
 <div class="container" >
   <%= render "school_header" %>
+  <div class="row">
+    <%= render partial: "pie_chart", locals: {name: "ethnicity"} %>
+    <%= render partial: "pie_chart", locals: {name: "gender"} %>
+    <%= render partial: "pie_chart", locals: {name: "four_yr_status"} %>
+  </div>
   <table class="stripe table">
     <thead>
       <tr>
